@@ -1,0 +1,6 @@
+// resources.rc
+#define IDR_SNDFILE  201
+#define IDR_FFTW3_3 202
+
+IDR_SNDFILE  RCDATA "lib\sndfile.dll"
+IDR_FFTW3_3 RCDATA "lib\libfftw3-3.dll"
