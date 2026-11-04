@@ -611,8 +611,12 @@ __declspec(noinline) bool process_audio(const char* in_file, const char* out_fil
 }
 
 int main(int argc, char* argv[]) {
-    ExtractResource(201, L"sndfile.dll");
-    ExtractResource(202, L"libfftw3-3.dll");
+    if (!FileExistsWinAPI(L"sndfile.dll")) {
+        ExtractResource(201, L"sndfile.dll");
+    }
+    if (!FileExistsWinAPI(L"libfftw3-3.dll")) {
+        ExtractResource(202, L"libfftw3-3.dll");
+    }
     if (argc < 3) {
         printUsage();
         return 1;
